@@ -1,0 +1,132 @@
+[
+  {
+    "CAS": "74-82-8",
+    "aliases": [
+      "METHANE"
+    ],
+    "m": 1.0,
+    "sigma": 3.7039,
+    "sigma_units": "1/Angstrom",
+    "u": 150.03,
+    "u_units": "K",
+    "molemass": 0.016043,
+    "molemass_units": "kg/mol",
+    "name": "METHANE",
+    "BibTeX": "??"
+  },
+  {
+    "CAS": "74-84-0",
+    "aliases": [
+      "ETHANE"
+    ],
+    "m": 1.6069,
+    "sigma": 3.5206,
+    "sigma_units": "1/Angstrom",
+    "u":  191.42,
+    "u_units": "K",
+    "molemass": 0.03007,
+    "molemass_units": "kg/mol",
+    "name": "ETHANE",
+    "BibTeX": "??"
+  },
+  {
+    "CAS": "74-98-6",
+    "aliases": [
+      "PROPANE"
+    ],
+    "m": 2.0020,
+    "sigma": 3.6184,
+    "sigma_units": "1/Angstrom",
+    "u": 208.11,
+    "u_units": "K",
+    "molemass": 0.044096,
+    "molemass_units": "kg/mol",
+    "name": "PROPANE",
+    "BibTeX": "??"
+  },
+  {
+    "CAS": "106-97-8",
+    "aliases": [
+      "BUTANE",
+      "N-BUTANE"
+    ],
+    "m": 2.3316,
+    "sigma": 3.7086,
+    "sigma_units": "1/Angstrom",
+    "u": 222.88,
+    "u_units": "K",
+    "molemass": 0.055123,
+    "molemass_units": "kg/mol",
+    "name": "N-BUTANE",
+    "BibTeX": "??"
+  },
+  {
+    "CAS": "109-66-0",
+    "aliases": [
+      "PENTANE",
+      "N-PENTANE"
+    ],
+    "m": 2.6896,
+    "sigma": 3.7729,
+    "sigma_units": "1/Angstrom",
+    "u": 231.20,
+    "u_units": "K",
+    "molemass": 0.072146,
+    "molemass_units": "kg/mol",
+    "name": "N-PENTANE",
+    "BibTeX": "??"
+  },
+  {
+    "CAS": "106-98-9",
+    "aliases": [
+      "BUTENE",
+      "1BUTENE",
+      "1-BUTENE"
+    ],
+    "m": 2.2864,
+    "sigma": 3.6431,
+    "sigma_units": "1/Angstrom",
+    "u": 222.00,
+    "u_units": "K",
+    "molemass": 0.05610631999999999,
+    "molemass_units": "kg/mol",
+    "name": "1-BUTENE",
+    "BibTeX": "??"
+  },
+  {
+    "CAS": "108-88-3",
+    "aliases": [
+      "TOLUENE",
+      "METHYLBENZENE"
+    ],
+    "m": 2.8149,
+    "sigma": 3.7169,
+    "sigma_units": "1/Angstrom",
+    "u": 285.69,
+    "u_units": "K",
+    "molemass": 0.092141,
+    "molemass_units": "kg/mol",
+    "name": "TOLUENE",
+    "BibTeX": "??"
+  },
+  {
+    "CAS": "64-19-7",
+    "aliases": [
+      "ACETIC ACID",
+      "ETHANOIC ACID"
+    ],
+    "m": 1.3403,
+    "sigma": 3.8582,
+    "sigma_units": "1/Angstrom",
+    "u": 211.59,
+    "u_units": "K",
+    "uAB": 3044.4,
+    "uAB_units": "K",
+    "kappa": 0.07555,
+    "kappa_units": "1/Angstrom^3",
+    "molemass": 0.060052,
+    "molemass_units": "kg/mol",
+    "name": "ACETIC ACID",
+    "BibTeX": "??"
+  }
+]
