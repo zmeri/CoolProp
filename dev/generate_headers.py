@@ -15,13 +15,11 @@ import glob
 
 json_options = {'indent' : 2, 'sort_keys' : True}
 
-
 def get_hash(data):
     try:
         return hashlib.sha224(data).hexdigest()
     except TypeError:
         return hashlib.sha224(data.encode('ascii')).hexdigest()
-
 
 # unicode
 repo_root_path = os.path.normpath(os.path.join(os.path.abspath(__file__), '..', '..'))
@@ -41,11 +39,13 @@ values = [
     ('all_incompressibles.json','all_incompressibles_JSON.h','all_incompressibles_JSON'),
     ('mixtures/mixture_departure_functions.json', 'mixture_departure_functions_JSON.h', 'mixture_departure_functions_JSON'),
     ('mixtures/mixture_binary_pairs.json', 'mixture_binary_pairs_JSON.h', 'mixture_binary_pairs_JSON'),
+    ('mixtures/mixture_binary_pairs_pcsaft.json', 'mixture_binary_pairs_pcsaft_JSON.h', 'mixture_binary_pairs_pcsaft_JSON'),
     ('mixtures/predefined_mixtures.json', 'predefined_mixtures_JSON.h', 'predefined_mixtures_JSON'),
     ('cubics/all_cubic_fluids.json', 'all_cubics_JSON.h', 'all_cubics_JSON'),
-    ('cubics/cubic_fluids_schema.json', 'cubic_fluids_schema_JSON.h', 'cubic_fluids_schema_JSON')
+    ('cubics/cubic_fluids_schema.json', 'cubic_fluids_schema_JSON.h', 'cubic_fluids_schema_JSON'),
+    ('pcsaft/all_pcsaft_fluids.json', 'all_pcsaft_JSON.h', 'all_pcsaft_JSON'),
+    ('pcsaft/pcsaft_fluids_schema.json', 'pcsaft_fluids_schema_JSON.h', 'pcsaft_fluids_schema_JSON')
 ]
-
 
 def TO_CPP(root_dir, hashes):
     def to_chunks(l, n):
@@ -112,7 +112,6 @@ def TO_CPP(root_dir, hashes):
         else:
             print(outfile + ' is up to date')
 
-
 def version_to_file(root_dir):
 
     # Parse the CMakeLists.txt file to generate the version
@@ -171,7 +170,6 @@ def version_to_file(root_dir):
 
     print('version written to hidden file: ' + hidden_file_name + " for use in builders that don't use git repo")
 
-
 def gitrev_to_file(root_dir):
     """
     If a git repo, use git to update the gitrevision.  If not a git repo, read
@@ -188,7 +186,7 @@ def gitrev_to_file(root_dir):
                              stdout=subprocess.PIPE,
                              stderr=subprocess.PIPE,
                              shell = True,
-                             cwd = os.path.abspath(os.path.dirname(__file__)))
+                             cwd = os.path.dirname(__file__))
             stdout, stderr = p.communicate()
             stdout = stdout.decode('utf-8')
 
@@ -230,9 +228,8 @@ def gitrev_to_file(root_dir):
         else:
             print('gitrevision.h is up to date')
 
-    except (subprocess.CalledProcessError,OSError) as err:
-        print('err:', err)
-
+    except (subprocess.CalledProcessError,OSError):
+        pass
 
 def combine_json(root_dir):
 
@@ -286,7 +283,6 @@ def combine_json(root_dir):
     fp.write(json.dumps(master))
     fp.close()
 
-
 def generate():
 
     import shutil
@@ -304,6 +300,5 @@ def generate():
         fp.write(json.dumps(hashes))
         fp.close()
 
-
 if __name__=='__main__':
-    generate()
+	generate()
