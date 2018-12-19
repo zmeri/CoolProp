@@ -1,18 +1,322 @@
 [
   {
-    "BibTeX": "test",
-    "CAS1": "106-98-9",
-    "CAS2": "108-88-3",
-    "Name1": "1-BUTENE",
-    "Name2": "TOLUENE",
-    "kij": 0.00
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "106-97-8",
+    "Name1": "METHANE",
+    "Name2": "N-BUTANE",
+    "kij": 0.022
   },
   {
-    "BibTeX": "test",
-    "CAS1": "74-98-6",
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "110-54-3",
+    "Name1": "METHANE",
+    "Name2": "N-HEXANE",
+    "kij": 0.021
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "142-82-5",
+    "Name1": "METHANE",
+    "Name2": "N-HEPTANE",
+    "kij": 0.016
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "124-18-5",
+    "Name1": "METHANE",
+    "Name2": "N-DECANE",
+    "kij": 0.056
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "75-28-5",
+    "Name1": "METHANE",
+    "Name2": "ISOBUTANE",
+    "kij": 0.028
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "110-82-7",
+    "Name1": "METHANE",
+    "Name2": "CYCLOHEXANE",
+    "kij": 0.045
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "71-43-2",
+    "Name1": "METHANE",
+    "Name2": "BENZENE",
+    "kij": 0.037
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
     "CAS2": "108-88-3",
-    "Name1": "PROPANE",
+    "Name1": "METHANE",
     "Name2": "TOLUENE",
-    "kij": 0.00
+    "kij": 0.052
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "119-64-2",
+    "Name1": "METHANE",
+    "Name2": "TETRALIN",
+    "kij": 0.075
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "108-38-3",
+    "Name1": "METHANE",
+    "Name2": "M-XYLENE",
+    "kij": 0.045
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "7727-37-9",
+    "CAS2": "74-85-1",
+    "Name1": "NITROGEN",
+    "Name2": "ETHYLENE",
+    "kij": 0.075
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "7727-37-9",
+    "CAS2": "110-54-3",
+    "Name1": "NITROGEN",
+    "Name2": "N-HEXANE",
+    "kij": 0.119
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-85-1",
+    "CAS2": "142-82-5",
+    "Name1": "ETHYLENE",
+    "Name2": "N-HEPTANE",
+    "kij": 0.018
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-85-1",
+    "CAS2": "115-07-1",
+    "Name1": "ETHYLENE",
+    "Name2": "PROPYLENE",
+    "kij": -0.001
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-98-6",
+    "CAS2": "106-97-8",
+    "Name1": "PROPANE",
+    "Name2": "N-BUTANE",
+    "kij": 0.003
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "115-07-1",
+    "CAS2": "75-28-5",
+    "Name1": "PROPYLENE",
+    "Name2": "ISOBUTANE",
+    "kij": -0.006
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "109-66-0",
+    "CAS2": "142-82-5",
+    "Name1": "N-PENTANE",
+    "Name2": "N-HEPTANE",
+    "kij": 0.011
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "124-38-9",
+    "CAS2": "74-82-8",
+    "Name1": "CARBON DIOXIDE",
+    "Name2": "METHANE",
+    "kij": 0.065
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-98-6",
+    "CAS2": "74-82-8",
+    "Name1": "CARBON DIOXIDE",
+    "Name2": "PROPANE",
+    "kij": 0.109
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-98-6",
+    "CAS2": "106-97-8",
+    "Name1": "CARBON DIOXIDE",
+    "Name2": "BUTANE",
+    "kij": 0.120
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-98-6",
+    "CAS2": "106-97-8",
+    "Name1": "CARBON DIOXIDE",
+    "Name2": "N-PENTANE",
+    "kij": 0.143
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-98-6",
+    "CAS2": "142-82-5",
+    "Name1": "CARBON DIOXIDE",
+    "Name2": "N-HEPTANE",
+    "kij": 0.129
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-98-6",
+    "CAS2": "108-87-2",
+    "Name1": "CARBON DIOXIDE",
+    "Name2": "METHYLCYCLOHEXANE",
+    "kij": 0.144
+  },
+  {
+    "BibTeX": "Ghosh-2003",
+    "CAS1": "74-82-8",
+    "CAS2": "112-40-3",
+    "Name1": "METHANE",
+    "Name2": "N-DODECANE",
+    "kij": 0.025
+  },
+  {
+    "BibTeX": "Ghosh-2003",
+    "CAS1": "74-84-0",
+    "CAS2": "112-40-3",
+    "Name1": "ETHANE",
+    "Name2": "DODECANE",
+    "kij": 0.020
+  },
+  {
+    "BibTeX": "Ghosh-2003",
+    "CAS1": "74-84-0",
+    "CAS2": "111-65-9",
+    "Name1": "ETHANE",
+    "Name2": "N-OCTANE",
+    "kij": 0.020
+  },
+  {
+    "BibTeX": "Ghosh-2003",
+    "CAS1": "630-08-0",
+    "CAS2": "111-65-9",
+    "Name1": "CARBON MONOXIDE",
+    "Name2": "N-OCTANE",
+    "kij": 0.125
+  },
+  {
+    "BibTeX": "Ghosh-2003",
+    "CAS1": "630-08-0",
+    "CAS2": "112-40-3",
+    "Name1": "CARBON MONOXIDE",
+    "Name2": "N-DODECANE",
+    "kij": 0.125
+  },
+  {
+    "BibTeX": "Ghosh-2003",
+    "CAS1": "1333-74-0",
+    "CAS2": "544-76-3",
+    "Name1": "HYDROGEN",
+    "Name2": "N-HEXADECANE",
+    "kij": 0.0
+  },
+  {
+    "BibTeX": "Ghosh-2003",
+    "CAS1": "1333-74-0",
+    "CAS2": "592-76-7",
+    "Name1": "HYDROGEN",
+    "Name2": "HEPTENE",
+    "kij": 0.0
+  },
+  {
+    "BibTeX": "Ghosh-2003",
+    "CAS1": "1333-74-0",
+    "CAS2": "111-66-0",
+    "Name1": "HYDROGEN",
+    "Name2": "OCTENE",
+    "kij": 0.0
+  },
+  {
+    "BibTeX": "Gross-2002",
+    "CAS1": "67-56-1",
+    "CAS2": "110-82-7",
+    "Name1": "METHANOL",
+    "Name2": "CYCLOHEXANE",
+    "kij": 0.051
+  },
+  {
+    "BibTeX": "Gross-2002",
+    "CAS1": "67-56-1",
+    "CAS2": "111-87-5",
+    "Name1": "METHANOL",
+    "Name2": "1-OCTANOL",
+    "kij": 0.020
+  },
+  {
+    "BibTeX": "Gross-2002",
+    "CAS1": "64-17-5",
+    "CAS2": "106-97-8",
+    "Name1": "ETHANOL",
+    "Name2": "N-BUTANE",
+    "kij": 0.028
+  },
+  {
+    "BibTeX": "Gross-2002",
+    "CAS1": "71-23-8",
+    "CAS2": "71-43-2",
+    "Name1": "1-PROPANOL",
+    "Name2": "BENZENE",
+    "kij": 0.020
+  },
+  {
+    "BibTeX": "Gross-2002",
+    "CAS1": "71-23-8",
+    "CAS2": "100-41-4",
+    "Name1": "1-PROPANOL",
+    "Name2": "ETHYLBENZENE",
+    "kij": 0.023
+  },
+  {
+    "BibTeX": "Gross-2002",
+    "CAS1": "‎67-63-0",
+    "CAS2": "71-43-2",
+    "Name1": "2-PROPANOL",
+    "Name2": "BENZENE",
+    "kij": 0.021
+  },
+  {
+    "BibTeX": "Gross-2002",
+    "CAS1": "71-36-3",
+    "CAS2": "106-97-8",
+    "Name1": "1-BUTANOL",
+    "Name2": "N-BUTANE",
+    "kij": 0.015
+  },
+  {
+    "BibTeX": "Gross-2002",
+    "CAS1": "71-41-0",
+    "CAS2": "71-43-2",
+    "Name1": "1-PENTANOL",
+    "Name2": "BENZENE",
+    "kij": 0.0135
+  },
+  {
+    "BibTeX": "Gross-2001",
+    "CAS1": "74-82-8",
+    "CAS2": "109-66-0",
+    "Name1": "METHANE",
+    "Name2": "N-PENTANE",
+    "kij": 0.024
   }
 ]
