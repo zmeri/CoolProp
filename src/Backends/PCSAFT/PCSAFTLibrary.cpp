@@ -370,52 +370,61 @@ void PCSAFTLibraryClass::set_mixture_binary_pair_pcsaft(const std::string &CAS1,
 }
 
 void PCSAFTLibraryClass::load_from_JSON(rapidjson::Document &doc) {
-    // Get the empty dictionary to be filled by the appropriate reducing parameter filling function
-    Dictionary dict;
-
-    // Get the vector of CAS numbers
-    std::vector<std::string> CAS;
-    CAS.push_back(cpjson::get_string(doc, "CAS1"));
-    CAS.push_back(cpjson::get_string(doc, "CAS2"));
-    std::string name1 = cpjson::get_string(doc, "Name1");
-    std::string name2 = cpjson::get_string(doc, "Name2");
-
-    // Sort the CAS number vector
-    std::sort(CAS.begin(), CAS.end());
-
-    // A sort was carried out, names/CAS were swapped
-    bool swapped = CAS[0].compare(cpjson::get_string(doc, "CAS1")) != 0;
-
-    if (swapped){ std::swap(name1, name2); }
-
-    // Populate the dictionary with common terms
-    dict.add_string("name1", name1);
-    dict.add_string("name2", name2);
-    dict.add_string("BibTeX", cpjson::get_string(doc, "BibTeX"));
-    if (doc.HasMember("kij")){
-        dict.add_number("kij", cpjson::get_double(doc, "kij"));
-    }
-    else{
-        std::cout << "Loading error: binary pair of " << name1 << " & " << name2 << "does not provide kij" << std::endl;
-    }
-
-    std::map<std::vector<std::string>, std::vector<Dictionary> >::iterator it = m_binary_pair_map.find(CAS);
-    if (it == m_binary_pair_map.end()){
-        // Add to binary pair map by creating one-element vector
-        m_binary_pair_map.insert(std::pair<std::vector<std::string>, std::vector<Dictionary> >(CAS, std::vector<Dictionary>(1, dict)));
-    }
-    else
+    for (rapidjson::Value::ValueIterator itr = doc.Begin(); itr != doc.End(); ++itr)
     {
-        if (get_config_bool(OVERWRITE_BINARY_INTERACTION)){
-            // Already there, see http://www.cplusplus.com/reference/map/map/insert/, so we are going to pop it and overwrite it
-            m_binary_pair_map.erase(it);
-            std::pair<std::map<std::vector<std::string>, std::vector<Dictionary> >::iterator, bool> ret;
-            ret = m_binary_pair_map.insert(std::pair<std::vector<std::string>, std::vector<Dictionary> >(CAS, std::vector<Dictionary>(1, dict)));
-            assert(ret.second == true);
+        // Get the empty dictionary to be filled by the appropriate interaction parameter
+        Dictionary dict;
+
+        // ParseResult result = document.Parse(json.c_str());
+        // if (!result) {
+        //   std::cerr << "JSON parse error: %s (%u)", GetParseError_En(result.Code()), result.Offset());
+        //   continue; // skip loop ;-)
+        // }
+
+        // Get the vector of CAS numbers
+        std::vector<std::string> CAS;
+        CAS.push_back(cpjson::get_string(*itr, "CAS1"));
+        CAS.push_back(cpjson::get_string(*itr, "CAS2"));
+        std::string name1 = cpjson::get_string(*itr, "Name1");
+        std::string name2 = cpjson::get_string(*itr, "Name2");
+
+        // Sort the CAS number vector
+        std::sort(CAS.begin(), CAS.end());
+
+        // A sort was carried out, names/CAS were swapped
+        bool swapped = CAS[0].compare(cpjson::get_string(*itr, "CAS1")) != 0;
+
+        if (swapped){ std::swap(name1, name2); }
+
+        // Populate the dictionary with common terms
+        dict.add_string("name1", name1);
+        dict.add_string("name2", name2);
+        dict.add_string("BibTeX", cpjson::get_string(*itr, "BibTeX"));
+        if (itr->HasMember("kij")){
+            dict.add_number("kij", cpjson::get_double(*itr, "kij"));
         }
         else{
-            // Error if already in map!
-            throw ValueError(format("CAS pair(%s,%s) already in binary interaction map; considering enabling configuration key OVERWRITE_BINARY_INTERACTION", CAS[0].c_str(), CAS[1].c_str()));
+            std::cout << "Loading error: binary pair of " << name1 << " & " << name2 << "does not provide kij" << std::endl;
+        }
+
+        std::map<std::vector<std::string>, std::vector<Dictionary> >::iterator it = m_binary_pair_map.find(CAS);
+        if (it == m_binary_pair_map.end()){
+            // Add to binary pair map by creating one-element vector
+            m_binary_pair_map.insert(std::pair<std::vector<std::string>, std::vector<Dictionary> >(CAS, std::vector<Dictionary>(1, dict)));
+        }
+        else
+        {
+            if (get_config_bool(OVERWRITE_BINARY_INTERACTION)){
+                // Already there, see http://www.cplusplus.com/reference/map/map/insert/, so we are going to pop it and overwrite it
+                m_binary_pair_map.erase(it);
+                std::pair<std::map<std::vector<std::string>, std::vector<Dictionary> >::iterator, bool> ret;
+                ret = m_binary_pair_map.insert(std::pair<std::vector<std::string>, std::vector<Dictionary> >(CAS, std::vector<Dictionary>(1, dict)));
+                assert(ret.second == true);
+            }
+            else{
+                // Error if already in map!
+                throw ValueError(format("CAS pair(%s,%s) already in binary interaction map; considering enabling configuration key OVERWRITE_BINARY_INTERACTION", CAS[0].c_str(), CAS[1].c_str()));
+            }
         }
     }
 }
@@ -425,7 +434,7 @@ void PCSAFTLibraryClass::load_from_string(const std::string &str){
     doc.Parse<0>(str.c_str());
     if (doc.HasParseError()){
         std::cout << str << std::endl ;
-        throw ValueError("Unable to parse departure function string");
+        throw ValueError("Unable to parse PC-SAFT binary interaction parameter string");
     }
     load_from_JSON(doc);
 }
